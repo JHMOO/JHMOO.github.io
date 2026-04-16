@@ -9,13 +9,14 @@ const menuData = {
   '음료': {
     subs: {
       'COFFEE': [
-        { name: '에스프레소', price: 2500, description: '샷 추가 +500원', categoryId: 'drinks' },
-        { name: '아메리카노', price: 2500, description: '샷 추가 +500원', categoryId: 'drinks' },
-        { name: '카푸치노', price: 3500, description: '두유 변경 가능 • 샷 추가 +500원', categoryId: 'drinks' },
-        { name: '카페 라떼', price: 3500, description: '두유 변경 가능 • 샷 추가 +500원', categoryId: 'drinks' },
-        { name: '바닐라 라떼', price: 4500, description: '두유 변경 가능 • 샷 추가 +500원', categoryId: 'drinks' },
-        { name: '디카페인 콜드브루', price: 3500, description: '두유 변경 가능 • 샷 추가 +500원', categoryId: 'drinks' },
-        { name: '디카페인 콜드브루 라떼', price: 4500, description: '두유 변경 가능 • 샷 추가 +500원', categoryId: 'drinks' }
+        { name: '에스프레소', price: 2500, description: '진한 espresso', categoryId: 'drinks' },
+        { name: '아메리카노', price: 2500, description: '기본 American Coffee', categoryId: 'drinks' },
+        { name: '카푸치노', price: 3500, description: '두유 변경 가능', categoryId: 'drinks' },
+        { name: '카페 라떼', price: 3500, description: '두유 변경 가능', categoryId: 'drinks' },
+        { name: '바닐라 라떼', price: 4500, description: '두유 변경 가능', categoryId: 'drinks' },
+        { name: '디카페인 콜드브루', price: 3500, description: '두유 변경 가능', categoryId: 'drinks' },
+        { name: '디카페인 콜드브루 라떼', price: 4500, description: '두유 변경 가능', categoryId: 'drinks' },
+        { name: '샷 추가', price: 500, description: '커피매뉴 1샷 추가', categoryId: 'drinks' }
       ],
       'NON COFFEE': [
         { name: '녹차 라떼', price: 5000, description: '두유 변경 가능', categoryId: 'drinks' },
@@ -23,20 +24,20 @@ const menuData = {
         { name: '곡물 라떼', price: 5000, description: '두유 변경 가능', categoryId: 'drinks' },
         { name: '생강라떼', price: 5000, description: '두유 변경 가능', categoryId: 'drinks' },
         { name: '생딸기라떼', price: 6000, description: '두유 변경 가능', categoryId: 'drinks' },
-        { name: '녹차 팥 스무디', price: 6000, description: '', categoryId: 'drinks' },
-        { name: '딸기 스무디', price: 5000, description: '', categoryId: 'drinks' },
-        { name: '망고 스무디', price: 5000, description: '', categoryId: 'drinks' },
-        { name: '생딸기 요거트', price: 6000, description: '', categoryId: 'drinks' },
-        { name: '블루베리 요거트', price: 6000, description: '', categoryId: 'drinks' },
-        { name: '그래놀라 요거트', price: 6000, description: '', categoryId: 'drinks' }
+        { name: '녹차 팥 스무디', price: 6000, description: '녹차와 팥의 조화', categoryId: 'drinks' },
+        { name: '딸기 스무디', price: 5000, description: '딸기 현leur', categoryId: 'drinks' },
+        { name: '망고 스무디', price: 5000, description: '망고 과일', categoryId: 'drinks' },
+        { name: '생딸기 요거트', price: 6000, description: '생딸기 요거트', categoryId: 'drinks' },
+        { name: '블루베리 요거트', price: 6000, description: '블루베리 요거트', categoryId: 'drinks' },
+        { name: '그래놀라 요거트', price: 6000, description: '그래놀라 요거트', categoryId: 'drinks' }
       ],
       'TEA & ADE': [
-        { name: '박하', price: 3000, description: '', categoryId: 'drinks' },
-        { name: '루이보스', price: 3000, description: '', categoryId: 'drinks' },
-        { name: '우엉', price: 5000, description: '', categoryId: 'drinks' },
-        { name: '얼그레이', price: 5000, description: '', categoryId: 'drinks' },
-        { name: '오미자', price: 5000, description: '', categoryId: 'drinks' },
-        { name: '레몬', price: 5000, description: '', categoryId: 'drinks' }
+        { name: '박하', price: 3000, description: '清凉한 박하차', categoryId: 'drinks' },
+        { name: '루이보스', price: 3000, description: '무카페인 루이보스', categoryId: 'drinks' },
+        { name: '우엉', price: 5000, description: '우엉.root 차', categoryId: 'drinks' },
+        { name: '얼그레이', price: 5000, description: '베리향 차', categoryId: 'drinks' },
+        { name: '오미자', price: 5000, description: '酸味 오미자차', categoryId: 'drinks' },
+        { name: '레몬', price: 5000, description: '레몬 에이드', categoryId: 'drinks' }
       ]
     }
   },

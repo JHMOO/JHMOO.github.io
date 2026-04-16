@@ -6,13 +6,14 @@ var menuData = {
   '음료': {
     subs: {
       'COFFEE': [
-        { name: '에스프레소', price: 2500, description: '샷 추가 +500원', categoryId: 'drinks' },
-        { name: '아메리카노', price: 2500, description: '샷 추가 +500원', categoryId: 'drinks' },
-        { name: '카푸치노', price: 3500, description: '두유 변경 가능 • 샷 추가 +500원', categoryId: 'drinks' },
-        { name: '카페 라떼', price: 3500, description: '두유 변경 가능 • 샷 추가 +500원', categoryId: 'drinks' },
-        { name: '바닐라 라떼', price: 4500, description: '두유 변경 가능 • 샷 추가 +500원', categoryId: 'drinks' },
-        { name: '디카페인 콜드브루', price: 3500, description: '두유 변경 가능 • 샷 추가 +500원', categoryId: 'drinks' },
-        { name: '디카페인 콜드브루 라떼', price: 4500, description: '두유 변경 가능 • 샷 추가 +500원', categoryId: 'drinks' }
+        { name: '에스프레소', price: 2500, description: '진한 espresso', categoryId: 'drinks' },
+        { name: '아메리카노', price: 2500, description: '기본 American Coffee', categoryId: 'drinks' },
+        { name: '카푸치노', price: 3500, description: '두유 변경 가능', categoryId: 'drinks' },
+        { name: '카페 라떼', price: 3500, description: '두유 변경 가능', categoryId: 'drinks' },
+        { name: '바닐라 라떼', price: 4500, description: '두유 변경 가능', categoryId: 'drinks' },
+        { name: '디카페인 콜드브루', price: 3500, description: '두유 변경 가능', categoryId: 'drinks' },
+        { name: '디카페인 콜드브루 라떼', price: 4500, description: '두유 변경 가능', categoryId: 'drinks' },
+        { name: '샷 추가', price: 500, description: '커피매뉴 1샷 추가', categoryId: 'drinks' }
       ],
       'NON COFFEE': [
         { name: '녹차 라떼', price: 5000, description: '두유 변경 가능', categoryId: 'drinks' },
@@ -226,10 +227,20 @@ function setupMenuSwitcher() {
 
   var allGrids = document.querySelectorAll('.menu-grid');
   var allTabBtns = document.querySelectorAll('.tab-btn');
+  var allDividers = document.querySelectorAll('.sub-tab-divider');
+  var allSubTabButtons = document.querySelectorAll('.sub-tab-buttons');
 
   for (var i = 0; i < allGrids.length; i++) {
     allGrids[i].style.display = 'none';
     allGrids[i].classList.remove('active');
+  }
+
+  for (var i = 0; i < allDividers.length; i++) {
+    allDividers[i].style.display = 'none';
+  }
+
+  for (var i = 0; i < allSubTabButtons.length; i++) {
+    allSubTabButtons[i].style.display = 'none';
   }
 
   for (var i = 0; i < allTabBtns.length; i++) {
@@ -247,6 +258,14 @@ function setupMenuSwitcher() {
         allGrids[k].classList.remove('active');
       }
 
+      for (var k = 0; k < allDividers.length; k++) {
+        allDividers[k].style.display = 'none';
+      }
+
+      for (var k = 0; k < allSubTabButtons.length; k++) {
+        allSubTabButtons[k].style.display = 'none';
+      }
+
       var gridToShow = document.getElementById(activeGridId);
       if (gridToShow) {
         gridToShow.style.display = 'grid';
@@ -254,10 +273,16 @@ function setupMenuSwitcher() {
       }
 
       if (tabName === '음료') {
+        document.getElementById('drink-divider').style.display = 'block';
+        document.getElementById('drink-sub-tabs-container').style.display = 'flex';
         initDrinksTabs();
       } else if (tabName === '쌀빵') {
+        document.getElementById('rice-divider').style.display = 'block';
+        document.getElementById('sub-tabs-container').style.display = 'flex';
         initRiceBreadTabs();
       } else if (tabName === '선물') {
+        document.getElementById('gift-divider').style.display = 'block';
+        document.getElementById('gift-sub-tabs-container').style.display = 'flex';
         initGiftDripBagTabs();
       }
     });
