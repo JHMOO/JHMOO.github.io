@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>카페 이음 | 비건 쌀빵과 따뜻한 디저트</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <!-- 헤더 -->
+  <header class="site-header">
+    <div class="container">
+      <a href="#" class="brand-name">카페 이음</a>
+      <nav class="main-nav">
+        <ul class="nav-list">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#menu">메뉴</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- 히어로 섹션 -->
+  <section class="hero" id="home">
+    <div class="container hero-content">
+      <div class="hero-text">
+        <h1 class="hero-title">
+          카페 이음
+          <span class="subtitle">자연에서 온 따뜻한 맛을<br>비건 쌀빵으로 만듭니다.</span>
+        </h1>
+        <p class="hero-subtitle">오직 100% 쌀가루로 만든 비건 쌀빵과<br>건강한 디저트를 매일 직접 구워드립니다.</p>
+        <button class="btn-primary btn-point" id="scroll-to-menu">메뉴 확인하기</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- 메뉴 섹션 -->
+  <section class="menu-section" id="menu">
+    <div class="container">
+      <h2 class="section-title">전체 메뉴</h2>
+      
+      <!-- 메인 탭 버튼들 -->
+      <div class="menu-tabs">
+        <button class="tab-btn active" data-tab="음료">☕ 음료</button>
+        <button class="tab-btn" data-tab="쌀빵">🍞 쌀빵</button>
+        <button class="tab-btn" data-tab="선물">🎁 선물</button>
+      </div>
+
+      <!-- 1. 음료 탭 -->
+      <!-- 음료 구분선 -->
+      <div class="sub-tab-divider" id="drink-divider"></div>
+      <!-- 음료 서브탭 버튼 영역 -->
+      <div class="sub-tab-buttons" id="drink-sub-tabs-container">
+        <button class="sub-tab-btn active" data-sub-tab="COFFEE">COFFEE</button>
+        <button class="sub-tab-btn" data-sub-tab="NON COFFEE">NON COFFEE</button>
+        <button class="sub-tab-btn" data-sub-tab="TEA & ADE">TEA & ADE</button>
+      </div>
+
+      <div id="menu-drinks" class="menu-grid">
+        <!-- 음료 각 하위 탭 콘텐츠 영역 -->
+        <div class="sub-menu-container">
+          <div id="drink-COFFEE" class="menu-grid sub-menu-grid active">
+            <!-- JS가 데이터를 여기에 렌더링합니다 -->
+          </div>
+
+          <div id="drink-NON COFFEE" class="menu-grid sub-menu-grid" style="display:none;">
+            <!-- JS가 데이터를 여기에 렌더링합니다 -->
+          </div>
+
+          <div id="drink-TEA & ADE" class="menu-grid sub-menu-grid" style="display:none;">
+            <!-- JS가 데이터를 여기에 렌더링합니다 -->
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. 쌀빵 탭 -->
+      <!-- 쌀빵 구분선 -->
+      <div class="sub-tab-divider" id="rice-divider"></div>
+      <!-- 쌀빵 서브탭 버튼 영역 -->
+      <div class="sub-tab-buttons" id="sub-tabs-container">
+        <button class="sub-tab-btn active" data-sub-tab="식빵">식빵</button>
+        <button class="sub-tab-btn" data-sub-tab="바게트">바게트</button>
+        <button class="sub-tab-btn" data-sub-tab="디저트">디저트</button>
+      </div>
+
+      <div id="menu-outer-container" class="menu-grid">
+        <!-- 각 하위 탭 콘텐츠 영역 -->
+        <div class="sub-menu-container">
+          <div id="sub-식빵" class="menu-grid sub-menu-grid active">
+            <!-- JS가 데이터를 여기에 렌더링합니다 -->
+          </div>
+
+          <div id="sub-바게트" class="menu-grid sub-menu-grid" style="display:none;">
+            <!-- JS가 데이터를 여기에 렌더링합니다 -->
+          </div>
+
+          <div id="sub-디저트" class="menu-grid sub-menu-grid" style="display:none;">
+            <!-- JS가 데이터를 여기에 렌더링합니다 -->
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. 선물 탭 -->
+      <!-- 선물 구분선 -->
+      <div class="sub-tab-divider" id="gift-divider"></div>
+      <!-- 선물 서브탭 버튼 영역 -->
+      <div class="sub-tab-buttons" id="gift-sub-tabs-container">
+        <button class="sub-tab-btn active" data-sub-tab="드립백">드립백</button>
+      </div>
+
+      <div id="menu-gift" class="menu-grid">
+        <!-- 각 하위 탭 콘텐츠 영역 -->
+        <div class="sub-menu-container">
+          <div id="sub-dripbag" class="menu-grid sub-menu-grid active">
+            <!-- JS가 데이터를 여기에 렌더링합니다 -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 푸터 -->
+  <footer class="site-footer">
+    <div style="text-align:center;">
+      <span style="color:var(--accent-green);font-size:2rem;font-family:'DM Serif Display', serif;display:block;margin-bottom:1rem;">카페 이음</span>
+      <p style="font-size:0.9rem;color:rgba(255,255,255,0.7);margin-bottom:1.5rem;">생명평화 덕계마을 사회적협동조합 · 평화 잇는 사람들</p>
+      
+      <div style="background:var(--bg-light);padding:1.2rem;border-radius:12px;display:inline-block;margin-bottom:1rem;max-width:95%;overflow:hidden;">
+        <div style="display:flex;justify-content:center;gap:0.8rem;margin-bottom:0.5rem;align-items:flex-start;flex-wrap:wrap;">
+          <div style="text-align:center;min-width:60px;">
+            <strong style="display:block;font-size:0.65rem;color:var(--text-secondary);">전화</strong>
+            <a href="tel:070-4410-2020" style="color:var(--accent-green);font-size:0.75rem;text-decoration:none;">070-4410-2020</a>
+          </div>
+          <div style="width:1px;height:30px;background:rgba(0,0,0,0.1);"></div>
+          <div style="text-align:center;min-width:60px;">
+            <strong style="display:block;font-size:0.65rem;color:var(--text-secondary);">인스타그램</strong>
+            <a href="https://www.instagram.com/cafe_eum_vegan/" target="_blank" style="color:var(--accent-green);font-size:0.75rem;text-decoration:none;">@cafe_eum_vegan</a>
+          </div>
+          <div style="width:1px;height:30px;background:rgba(0,0,0,0.1);"></div>
+          <div style="text-align:center;min-width:60px;">
+            <strong style="display:block;font-size:0.65rem;color:var(--text-secondary);">근무시간</strong>
+            <span style="color:var(--text-primary);font-size:0.7rem;display:block;">월~토 10:00-22:00</span>
+            <span style="font-size:0.6rem;color:var(--text-secondary);">일요일 휴무</span>
+          </div>
+          <div style="width:1px;height:30px;background:rgba(0,0,0,0.1);"></div>
+          <div style="text-align:center;min-width:60px;">
+            <strong style="display:block;font-size:0.65rem;color:var(--text-secondary);">위치</strong>
+            <a href="https://naver.me/5yW4y1y3" target="_blank" style="color:var(--text-primary);font-size:0.7rem;display:block;white-space:nowrap;text-decoration:none;">경남 양산시<br>덕계2길 13-12 1층</a>
+          </div>
+        </div>
+      </div>
+      
+      <div style="padding-top:1rem;border-top:1px solid rgba(255,255,255,0.1);">
+        <p style="font-size:0.8rem;color:rgba(255,255,255,0.5);margin:0;">Since 2017 · 비건 쌀빵 마을공동체</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
