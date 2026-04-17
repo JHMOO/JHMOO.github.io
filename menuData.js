@@ -9,8 +9,8 @@ const menuData = {
   '음료': {
     subs: {
       'COFFEE': [
-        { name: '에스프레소', price: 2500, description: '진한 espresso', categoryId: 'drinks' },
-        { name: '아메리카노', price: 2500, description: '기본 American Coffee', categoryId: 'drinks' },
+        { name: '에스프레소', price: 2500, categoryId: 'drinks' },
+        { name: '아메리카노', price: 2500, categoryId: 'drinks' },
         { name: '카푸치노', price: 3500, description: '두유 변경 가능', categoryId: 'drinks' },
         { name: '카페 라떼', price: 3500, description: '두유 변경 가능', categoryId: 'drinks' },
         { name: '바닐라 라떼', price: 4500, description: '두유 변경 가능', categoryId: 'drinks' },

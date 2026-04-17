@@ -21,8 +21,8 @@ body {
   font-family: 'Noto Sans KR', sans-serif;
   color: var(--text-primary);
   line-height: 1.7;
-  background-color: #f9f9f9;
-  /* 본문 배경색 */
+  background-color: #f9f6f3;
+  /* 베이지 색상 */
   margin: 0;
   padding-top: 0;
   /* 헤더가 body의 흐름을 막지 않도록 */
@@ -305,73 +305,210 @@ body {
   }
 }
 
+@media (max-width: 767px) {
+  .menu-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    padding: 2px 4px;
+    margin-bottom: 40px;
+  }
+  
+  .menu-item-card {
+    padding: 5px;
+    min-height: 70px;
+  }
+  
+  .item-image-placeholder {
+    aspect-ratio: 3 / 2;
+    margin-bottom: 4px;
+  }
+  
+  .item-info {
+    min-height: 50px;
+  }
+  
+  .item-name {
+    font-size: 13px;
+    word-wrap: break-word;
+    line-height: 1.2;
+    margin: 0;
+  }
+  
+  .item-desc {
+    font-size: 10px;
+  }
+}
+
+@media screen and (max-width: 480px) and (orientation: landscape) {
+  .menu-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .menu-item-card {
+    padding: 5px 6px;
+    min-height: 140px;
+  }
+  
+.item-name {
+    font-size: clamp(11px, 2vw, 13px);
+    word-wrap: break-word;
+    line-height: 1.15;
+    min-height: 20px;
+  }
+  
+.item-desc {
+    font-size: clamp(9px, 1.5vw, 11px);
+    line-height: 1.2;
+    margin: 3px 0;
+}
+  
+  .item-desc {
+    font-size: 10px;
+  }
+}
+
 /* ============================================= */
-/* ✨ 8. 메뉴 카드 (Menu Item Card) - VISUAL FIXES HERE */
+/* ✨ 8. 메뉴 카드 (Menu Item Card) */
 /* ==================================================== */
 .menu-item-card {
-  /* 카드의 기본 스타일과 레이아웃을 강제하여 시각적 문제를 해결합니다. */
-  border: 1px solid rgba(0, 0, 0, 0.1);
   background-color: #ffffff;
-  padding: 10px;
+  border: 1px solid #dcdcdc;
   border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  padding: 8px;
+  transition: all 0.3s ease;
+  min-height: 70px;
+  text-align: center;
   display: flex;
   flex-direction: column;
-  transition: all 0.3s ease;
-  min-height: 200px;
-  /* 최소 높이 지정 (4:3 이미지 비율 공간 포함) */
-  text-align: center;
+  overflow: hidden;
+  cursor: pointer;
 }
 
 .menu-item-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.22);
+  border-color: #5c9a6d;
 }
 
-/* ⭐️⭐️⭐️ 가장 중요한 시각화 수정 ⭐️⭐️⭐️ */
+.menu-item-card:active {
+  transform: scale(0.97);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
 .item-image-placeholder {
   width: 100%;
-  /* 이미지 영역: 4:3 비율 */
   aspect-ratio: 4 / 3;
   background-color: #f0f0f0;
   border-radius: 6px;
   margin-bottom: 8px;
+  flex-shrink: 0;
 }
 
 .item-info {
-  flex-grow: 1;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  /* 텍스트와 가격을 수직으로 정렬 */
-  height: 100%;
-  padding-bottom: 5px;
+  min-height: 80px;
 }
 
 .item-name {
-  font-size: 16px;
+  font-size: clamp(13px, 2vw, 16px);
   font-weight: 700;
-  margin: 0 0 3px;
   color: var(--text-primary);
+  word-wrap: break-word;
+  word-break: keep-all;
+  line-height: 1.15;
+  min-height: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.item-bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: auto;
 }
 
 .item-desc {
-  font-size: 12px;
+  font-size: clamp(10px, 1.5vw, 13px);
   color: var(--text-secondary);
+  line-height: 1.3;
   margin: 3px 0;
 }
 
-.item-footer {
+.item-name {
+  font-size: clamp(13px, 2vw, 16px);
+  font-weight: 700;
+  color: var(--text-primary);
+  word-wrap: break-word;
+  word-break: keep-all;
+  line-height: 1.15;
+  min-height: 36px;
+}
+
+.item-bottom {
   display: flex;
-  justify-content: flex-end;
+  flex-direction: column;
   align-items: center;
-  margin-top: 5px;
+  margin-top: auto;
+  gap: 2px;
+}
+
+.item-desc {
+  font-size: clamp(10px, 1.5vw, 13px);
+  color: var(--text-secondary);
+  line-height: 1.3;
+}
+
+.item-desc[style*="visibility:hidden"] {
+  visibility: hidden;
 }
 
 .item-price {
-  font-size: 16px;
+  font-size: clamp(13px, 1.8vw, 16px);
   font-weight: 700;
-  color: var(--accent-green);
+  color: #7ab88a;
+}
+
+.item-name {
+  font-size: clamp(13px, 2.2vw, 16px);
+  font-weight: 700;
+  color: var(--text-primary);
+  word-wrap: break-word;
+  word-break: keep-all;
+  line-height: 1.2;
+}
+
+.item-bottom {
+  margin-top: auto;
+  padding-top: 0;
+}
+
+.item-desc {
+  font-size: clamp(10px, 1.5vw, 13px);
+  color: var(--text-secondary);
+  line-height: 1.3;
+  margin: 3px 0;
+}
+
+.item-price {
+  font-size: clamp(13px, 1.8vw, 16px);
+  font-weight: 700;
+  color: #7ab88a;
+}
+
+@media (max-width: 767px) {
+  .item-name {
+    font-size: 13px;
+    word-wrap: break-word;
+    line-height: 1.2;
+    min-height: 20px;
+  }
 }
 
 /* =============================================== */

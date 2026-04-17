@@ -6,8 +6,8 @@ var menuData = {
   '음료': {
     subs: {
       'COFFEE': [
-        { name: '에스프레소', price: 2500, description: '진한 espresso', categoryId: 'drinks' },
-        { name: '아메리카노', price: 2500, description: '기본 American Coffee', categoryId: 'drinks' },
+        { name: '에스프레소', price: 2500, categoryId: 'drinks' },
+        { name: '아메리카노', price: 2500, categoryId: 'drinks' },
         { name: '카푸치노', price: 3500, description: '두유 변경 가능', categoryId: 'drinks' },
         { name: '카페 라떼', price: 3500, description: '두유 변경 가능', categoryId: 'drinks' },
         { name: '바닐라 라떼', price: 4500, description: '두유 변경 가능', categoryId: 'drinks' },
@@ -94,15 +94,17 @@ function renderMenuItems(items, targetId) {
   targetGrid.innerHTML = '';
   var cardHtml = '';
 
-  for (var i = 0; i < items.length; i++) {
+for (var i = 0; i < items.length; i++) {
     var item = items[i];
+    var descStyle = (!item.description) ? 'style="visibility:hidden"' : '';
     cardHtml += '<div class="menu-item-card">';
     cardHtml += '<div class="item-image-placeholder"></div>';
     cardHtml += '<div class="item-info">';
     cardHtml += '<h3 class="item-name">' + item.name + '</h3>';
-    cardHtml += '<p class="item-desc">' + item.description + '</p>';
-    cardHtml += '<div class="item-footer">';
+    cardHtml += '<div class="item-bottom">';
+    cardHtml += '<p class="item-desc" ' + descStyle + '>' + (item.description || '&nbsp;') + '</p>';
     cardHtml += '<span class="item-price">' + item.price.toLocaleString() + '원</span>';
+    cardHtml += '</div>';
     cardHtml += '</div></div></div>';
   }
 
@@ -297,6 +299,32 @@ function setupMenuSwitcher() {
 // DOM 로드 완료 시 실행
 document.addEventListener('DOMContentLoaded', function() {
   setupMenuSwitcher();
+  
+  var scrollBtn = document.getElementById('scroll-to-menu');
+  if (scrollBtn) {
+    scrollBtn.addEventListener('click', function() {
+      var menuSection = document.getElementById('menu');
+      if (menuSection) {
+        var targetPosition = menuSection.getBoundingClientRect().top + window.pageYOffset;
+        var startPosition = window.pageYOffset;
+        var distance = targetPosition - startPosition;
+        var duration = 1000;
+        var startTime = null;
+        
+        function animation(currentTime) {
+          if (startTime === null) startTime = currentTime;
+          var elapsed = currentTime - startTime;
+          var progress = Math.min(elapsed / duration, 1);
+          var easeProgress = progress * (2 - progress);
+          window.scrollTo(0, startPosition + distance * easeProgress);
+          if (progress < 1) {
+            requestAnimationFrame(animation);
+          }
+        }
+        requestAnimationFrame(animation);
+      }
+    });
+  }
 
   var navbar = document.querySelector('.site-header');
   if (navbar) {
